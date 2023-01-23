@@ -1,8 +1,15 @@
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import theme from "assets/styles/theme";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./router";
 function App() {
   return (
-    <div className="App">
-      <h1>Ready To code!</h1>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
