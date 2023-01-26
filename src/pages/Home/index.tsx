@@ -1,4 +1,4 @@
-import { ReactComponent as Search } from "./assets/icons/search.svg";
+import Search from "../../assets/icons/search.svg";
 import * as S from "./style";
 
 const Home = () => {
@@ -8,20 +8,20 @@ const Home = () => {
         <header>
           <S.HomeHeaderDetails>
             <div>
-              <S.HomeHeaderDetailsLogo>Pizza Fresh</S.HomeHeaderDetailsLogo>
+              <S.HomeHeaderDetailsLogo>La Brasa</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
                 Aqui ficará a data
               </S.HomeHeaderDetailsDate>
             </div>
             <S.HomeHeaderDetailsSearch>
-              <Search />
+              <img src={Search} alt="Search Component" />
               <input type="text" placeholder="Procure pelo sabor" />
             </S.HomeHeaderDetailsSearch>
           </S.HomeHeaderDetails>
         </header>
         <div>
           <S.HomeProductTitle>
-            <b>Pizzas</b>
+            <b>Hamburguers</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
             <p>Lista de produtos aqui</p>
