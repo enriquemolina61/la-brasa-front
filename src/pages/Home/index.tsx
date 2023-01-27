@@ -1,10 +1,15 @@
 import Menu from "../../components/Menu";
+import { DateTime } from "luxon";
 import Search from "../../assets/icons/search.svg";
 import * as S from "./style";
 import { RoutesPath } from "../../types/routes";
 import { navItems } from "../../data/navigation";
 
 const Home = () => {
+  const date = DateTime.now().toLocaleString({
+    ...DateTime.DATE_SHORT,
+    weekday: "long",
+  });
   return (
     <S.Home>
       <Menu active={RoutesPath.HOME} navItems={navItems} />
@@ -13,9 +18,7 @@ const Home = () => {
           <S.HomeHeaderDetails>
             <div>
               <S.HomeHeaderDetailsLogo>La Brasa</S.HomeHeaderDetailsLogo>
-              <S.HomeHeaderDetailsDate>
-                Aqui ficará a data
-              </S.HomeHeaderDetailsDate>
+              <S.HomeHeaderDetailsDate>{date}</S.HomeHeaderDetailsDate>
             </div>
             <S.HomeHeaderDetailsSearch>
               <img src={Search} alt="Search Component" />

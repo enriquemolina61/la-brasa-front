@@ -4,6 +4,7 @@ import theme from "./assets/styles/theme";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
 import { QueryClient, QueryClientProvider } from "react-query";
+import "./App.css";
 
 const queryClient = new QueryClient();
 function App() {
