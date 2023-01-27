@@ -1,6 +1,6 @@
 import { RoutesPath } from "types/routes";
 
-export interface Imenu {
+export interface NavItem {
   icon: JSX.Element;
-  patch: RoutesPath;
+  path: RoutesPath;
 }

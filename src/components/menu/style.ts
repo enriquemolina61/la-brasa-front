@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { Theme } from "types/styled-components";
 
 const activeBox = (theme: Theme) => css`
-  content: "";
   position: absolute;
   background-color: transparent;
   height: 50px;

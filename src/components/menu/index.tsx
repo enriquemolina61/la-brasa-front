@@ -1,4 +1,5 @@
-import logo from "assets/imgs/logo.png";
+import logo from "../../assets/imgs/logo.png";
+import Logout from "../../assets/icons/logout.svg";
 import * as S from "./style";
 
 const Menu = () => {
@@ -8,7 +9,13 @@ const Menu = () => {
         <S.MenuLogo>
           <img src={logo} alt="Logo" />
         </S.MenuLogo>
+        <S.MenuItem>
+          <S.MenuItemButton></S.MenuItemButton>
+        </S.MenuItem>
       </nav>
+      <S.MenuItemLogout>
+        <img src={Logout} alt="Logout Component" />
+      </S.MenuItemLogout>
     </S.Menu>
   );
 };

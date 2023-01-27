@@ -1,4 +1,4 @@
-import Menu from "components/Menu";
+import Menu from "../../components/Menu";
 import Search from "../../assets/icons/search.svg";
 import * as S from "./style";
 
