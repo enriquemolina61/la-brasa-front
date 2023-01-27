@@ -1,8 +1,8 @@
 import Menu from "../../components/Menu";
 import Search from "../../assets/icons/search.svg";
 import * as S from "./style";
-import { RoutesPath } from "types/routes";\
-import { navItems } from "data/navigation";
+import { RoutesPath } from "../../types/routes";
+import { navItems } from "../../data/navigation";
 
 const Home = () => {
   return (
