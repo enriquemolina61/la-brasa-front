@@ -1,10 +1,12 @@
 import styled, { css } from "styled-components";
-import pattern from "../../assets/imgs/burger-pattern.png";
 
 export const Login = styled.section`
   ${({ theme }) => css`
-    background-color: ${theme.colors.baseBg2};
-    background-image: url(${pattern});
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    background-color: ${theme.colors.baseLogin};
     background-size: cover;
     background-position: center;
     width: 100vw;
