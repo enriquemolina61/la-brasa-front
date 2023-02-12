@@ -11,26 +11,25 @@ import * as S from "./style";
 
 const ProductPage = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
+  const [product, setProduct] = useState<Product>({
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+  });
   const date = DateTime.now().toLocaleString({
     ...DateTime.DATE_SHORT,
     weekday: "long",
   });
   const params = useParams();
-  let product: Product = {
-    id: "",
-    name: "",
-    description: "",
-    price: 0,
-    image: "",
-  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
       description: formData.get("description"),
-      price: formData.get("price"),
+      price: formData.get("price") as unknown as number,
       image: formData.get("image"),
     };
     console.log(data);
@@ -38,9 +37,17 @@ const ProductPage = () => {
   useEffect(() => {
     const getById = async () => {
       const response = await getProductById(params.id as string);
-    };
+      setProduct({
+        name: response.name,
+        description: response.description,
+        price: response.price,
+        image: response.image,
+      });
+      console.log(response);
 
-    setIsLoaded(true);
+      setIsLoaded(true);
+    };
+    getById();
   }, []);
 
   return (
@@ -63,19 +70,40 @@ const ProductPage = () => {
           <S.HomeProductTitle>
             <b>Hamburguers</b>
           </S.HomeProductTitle>
-          <S.HomeProductList>
-            <form action="submit" onSubmit={handleSubmit}>
-              <input type="text" placeholder="Nome do produto" name="name" />
-              <input
-                type="text"
-                placeholder="Descrição do produto"
-                name="description"
-              />
-              <input type="text" placeholder="Preço do produto" name="price" />
-              <input type="text" placeholder="Imagem do produto" name="image" />
-              <button type="submit">Salvar</button>
-            </form>
-          </S.HomeProductList>
+
+          {isLoaded && (
+            <S.HomeProductList>
+              <form action="submit" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Nome do produto"
+                  name="name"
+                  defaultValue={product.name}
+                />
+                <input
+                  type="text"
+                  placeholder="Descrição do produto"
+                  name="description"
+                  defaultValue={product.description}
+                />
+                <input
+                  type="number"
+                  min={"0"}
+                  step={"0.01"}
+                  placeholder="Preço do produto"
+                  name="price"
+                  defaultValue={product.price}
+                />
+                <input
+                  type="text"
+                  placeholder="Imagem do produto"
+                  name="image"
+                  defaultValue={product.image}
+                />
+                <button type="submit">Salvar</button>
+              </form>
+            </S.HomeProductList>
+          )}
         </div>
       </S.HomeContent>
       <aside>
