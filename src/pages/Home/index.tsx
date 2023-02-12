@@ -4,6 +4,7 @@ import Search from "../../assets/icons/search.svg";
 import * as S from "./style";
 import { RoutesPath } from "../../types/routes";
 import { navItems } from "../../data/navigation";
+import { ProductItem } from "../../components/ProductItem";
 
 const Home = () => {
   const date = DateTime.now().toLocaleString({
@@ -31,7 +32,12 @@ const Home = () => {
             <b>Hamburguers</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-            <p>Lista de produtos aqui</p>
+            <ProductItem
+              name="X Egg Bacon"
+              description="Hamburguer de carne bovina, ovo, bacon e queijo."
+              price={10}
+              image="https://harpersbazaar.uol.com.br/wp-content/uploads/2018/10/x-egg-sanduiche-02.jpg"
+            />
           </S.HomeProductList>
         </div>
       </S.HomeContent>
