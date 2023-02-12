@@ -1,15 +1,20 @@
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Search from "../../assets/icons/search.svg";
 import Menu from "../../components/Menu";
 import { navItems } from "../../data/navigation";
 import { Product } from "../../types/product";
 import { RoutesPath } from "../../types/routes";
-import { getProductById } from "../../utils/api/api";
+import {
+  deleteProduct,
+  getProductById,
+  updateProduct,
+} from "../../utils/api/api";
 import * as S from "./style";
 
 const ProductPage = () => {
+  const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [product, setProduct] = useState<Product>({
     name: "",
@@ -23,17 +28,27 @@ const ProductPage = () => {
   });
   const params = useParams();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      description: formData.get("description"),
-      price: formData.get("price") as unknown as number,
-      image: formData.get("image"),
+    const formData = new FormData(e.currentTarget) as any;
+    const data: Product = {
+      name: formData.get("name") as string,
+      description: formData.get("description") as string,
+      price: +formData.get("price"),
+      image: formData.get("image") as string,
     };
-    console.log(data);
+    if (JSON.stringify(data) === JSON.stringify(product)) {
+      alert("Nenhum dado foi alterado!");
+      return;
+    }
+
+    await updateProduct(params.id as string, data);
   };
+  const handleDelete = async () => {
+    await deleteProduct(params.id as string);
+    navigate("/");
+  };
+
   useEffect(() => {
     const getById = async () => {
       const response = await getProductById(params.id as string);
@@ -101,6 +116,9 @@ const ProductPage = () => {
                   defaultValue={product.image}
                 />
                 <button type="submit">Salvar</button>
+                <button type="button" onClick={handleDelete}>
+                  Deletar Produto
+                </button>
               </form>
             </S.HomeProductList>
           )}

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Product } from "../../types/product";
 
 axios.defaults.baseURL = "https://la-brasa-server-production.up.railway.app/";
 
@@ -66,5 +67,21 @@ export const getProductById = async (id: string) => {
   } catch (error) {
     console.log(error);
     return [];
+  }
+};
+
+export const updateProduct = async (id: string, product: Product) => {
+  try {
+    const response = await axios.patch(`/product/${id}`, product);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteProduct = async (id: string) => {
+  try {
+    const response = await axios.delete(`/product/${id}`);
+  } catch (error) {
+    console.log(error);
   }
 };
