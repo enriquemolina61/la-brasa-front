@@ -18,6 +18,8 @@ axios.interceptors.response.use(
   },
   (error) => {
     if (error.response.status === 401) {
+      console.log("Alouuuu");
+
       localStorage.removeItem("accessToken");
       window.location.href = "/login";
     }
@@ -37,12 +39,22 @@ export const login = async ({
       password,
     });
     if (response.status === 200) {
-      localStorage.setItem("acessToken", response.data.token);
+      localStorage.setItem("accessToken", response.data.token);
       return true;
     }
     return false;
   } catch (error) {
     console.log(error);
     return false;
+  }
+};
+
+export const getProducts = async () => {
+  try {
+    const response = await axios.get("/product");
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return [];
   }
 };

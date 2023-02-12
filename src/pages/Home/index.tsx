@@ -1,10 +1,10 @@
-import Menu from "../../components/Menu";
 import { DateTime } from "luxon";
 import Search from "../../assets/icons/search.svg";
-import * as S from "./style";
-import { RoutesPath } from "../../types/routes";
+import Menu from "../../components/Menu";
+import ProductList from "../../components/ProductList";
 import { navItems } from "../../data/navigation";
-import { ProductItem } from "../../components/ProductItem";
+import { RoutesPath } from "../../types/routes";
+import * as S from "./style";
 
 const Home = () => {
   const date = DateTime.now().toLocaleString({
@@ -32,12 +32,13 @@ const Home = () => {
             <b>Hamburguers</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-            <ProductItem
+            {/* <ProductItem
               name="X Egg Bacon"
               description="Hamburguer de carne bovina, ovo, bacon e queijo."
               price={10}
               image="https://harpersbazaar.uol.com.br/wp-content/uploads/2018/10/x-egg-sanduiche-02.jpg"
-            />
+            /> */}
+            <ProductList />
           </S.HomeProductList>
         </div>
       </S.HomeContent>
