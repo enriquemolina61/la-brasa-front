@@ -1,17 +1,5 @@
 import styled, { css } from "styled-components";
-import { Theme } from "types/styled-components";
-
-const activeBox = (theme: Theme) => css`
-  position: absolute;
-  background-color: transparent;
-  height: 50px;
-  right: 0;
-  width: calc(100% - 15px);
-  bottom: -50px;
-  border-top-right-radius: 25px;
-  box-shadow: 0 -25px 0 0 ${theme.colors.baseBg1};
-  z-index: 0;
-`;
+import { Theme } from "../../types/styled-components";
 
 export const Menu = styled.menu`
   ${({ theme }) => css`
@@ -45,42 +33,29 @@ export const MenuLogo = styled.div`
     }
   `}
 `;
-
-const MenuItemModifiers = {
-  active: (theme: Theme) => css`
-    background-color: ${theme.colors.baseBg1};
-    &::before {
-      ${activeBox(theme)};
-      top: -50px;
-      transform: scaleY(-1);
-    }
-    &::after {
-      ${activeBox(theme)};
-    }
-  `,
-};
-
-type MenuItemStyled = { active: boolean };
-
-export const MenuItem = styled.div<MenuItemStyled>`
-  ${({ theme, active }) => css`
-    height: 80px;
-    width: calc(100% - 15px);
-    border-radius: 16px 0 0 16px;
+export const MenuItem = styled.div`
+  ${({ theme }) => css`
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 15px;
-    position: relative;
-    ${active && MenuItemModifiers.active(theme)}
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
   `}
 `;
 
-export const MenuItemButton = styled.button<MenuItemStyled>`
-  ${({ theme, active }) => css`
+export const MenuItemButton = styled.button`
+  ${({ theme }) => css`
     ${theme.mixins.buttonIcon()};
-    z-index: 1;
-    ${active && theme.mixins.buttonIcon(true)};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      background: ${theme.colors.baseBg1};
+    }
   `}
 `;
 

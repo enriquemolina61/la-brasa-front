@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
 import { useNavigate } from "react-router-dom";
+import { createProduct } from "../../utils/api/api";
 import Search from "../../assets/icons/search.svg";
 import Menu from "../../components/Menu";
 import { navItems } from "../../data/navigation";
@@ -23,6 +24,20 @@ const CreateProductPage = () => {
       price: +formData.get("price"),
       image: formData.get("image") as string,
     };
+    console.log(data);
+    if (
+      data.name === "" ||
+      data.description === "" ||
+      data.price === 0 ||
+      data.image === ""
+    ) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+    const response = await createProduct(data);
+    if (response) {
+      navigate("/");
+    }
   };
 
   return (

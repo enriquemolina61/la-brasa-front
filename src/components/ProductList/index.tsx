@@ -19,6 +19,8 @@ export default function ProductList({}: Props) {
       {products.length > 0 &&
         products.map((product) => (
           <ProductItem
+            productId={product.id as string}
+            key={product.id}
             name={product.name}
             price={product.price}
             description={product.description}

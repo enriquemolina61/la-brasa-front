@@ -85,3 +85,16 @@ export const deleteProduct = async (id: string) => {
     console.log(error);
   }
 };
+
+export const createProduct = async (product: Product) => {
+  try {
+    const response = await axios.post(`/product`, product);
+    if (response.status === 201) {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
