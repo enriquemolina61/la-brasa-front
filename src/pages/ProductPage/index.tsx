@@ -124,9 +124,7 @@ const ProductPage = () => {
           )}
         </div>
       </S.HomeContent>
-      <aside>
-        <p>Detalhes dos pedidos aqui</p>
-      </aside>
+      <aside></aside>
     </S.Home>
   );
 };

@@ -50,10 +50,6 @@ const CreateProductPage = () => {
               <S.HomeHeaderDetailsLogo>La Brasa</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>{date}</S.HomeHeaderDetailsDate>
             </div>
-            <S.HomeHeaderDetailsSearch>
-              <img src={Search} alt="Search Component" />
-              <input type="text" placeholder="Procure pelo sabor" />
-            </S.HomeHeaderDetailsSearch>
           </S.HomeHeaderDetails>
         </header>
         <div>
@@ -82,9 +78,7 @@ const CreateProductPage = () => {
           </S.HomeProductList>
         </div>
       </S.HomeContent>
-      <aside>
-        <p>Detalhes dos pedidos aqui</p>
-      </aside>
+      <aside></aside>
     </S.Home>
   );
 };

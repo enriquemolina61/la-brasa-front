@@ -24,7 +24,7 @@ const Users = () => {
             </div>
             <S.HomeHeaderDetailsSearch>
               <img src={Search} alt="Search Component" />
-              <input type="text" placeholder="Procure pelo sabor" />
+              <input type="text" placeholder="Procure pelo usuário" />
             </S.HomeHeaderDetailsSearch>
           </S.HomeHeaderDetails>
         </header>
@@ -37,9 +37,7 @@ const Users = () => {
           </S.HomeProductList>
         </div>
       </S.HomeContent>
-      <aside>
-        <p>Detalhes dos pedidos aqui</p>
-      </aside>
+      <aside></aside>
     </S.Home>
   );
 };
