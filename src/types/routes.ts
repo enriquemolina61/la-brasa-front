@@ -4,4 +4,5 @@ export enum RoutesPath {
   SETTINGS = "/settings",
   PRODUCT = "/product/:id",
   CREATEPRODUCT = "/create-product",
+  USER = "/user",
 }

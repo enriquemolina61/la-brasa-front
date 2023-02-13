@@ -98,3 +98,13 @@ export const createProduct = async (product: Product) => {
     return false;
   }
 };
+
+export const getUsers = async () => {
+  try {
+    const response = await axios.get("/user");
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};

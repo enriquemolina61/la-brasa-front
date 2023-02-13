@@ -49,8 +49,7 @@ const Menu = ({}: MenuProps) => {
         <S.MenuItem>
           <S.MenuItemButton
             onClick={() => {
-              setActive("User"),
-                navigate("/product/3016dbd0-7eb1-4e44-8f62-696257d281d0");
+              setActive("User"), navigate("/user");
             }}
             type="button"
             className={active == "User" ? "active" : ""}

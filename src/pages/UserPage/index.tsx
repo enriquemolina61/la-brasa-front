@@ -1,19 +1,20 @@
 import { DateTime } from "luxon";
+import UsersList from "../../components/UsersList";
 import Search from "../../assets/icons/search.svg";
 import Menu from "../../components/Menu";
-import ProductList from "../../components/ProductList";
+
 import { navItems } from "../../data/navigation";
 import { RoutesPath } from "../../types/routes";
 import * as S from "./style";
 
-const Home = () => {
+const Users = () => {
   const date = DateTime.now().toLocaleString({
     ...DateTime.DATE_SHORT,
     weekday: "long",
   });
   return (
     <S.Home>
-      <Menu active={RoutesPath.HOME} navItems={navItems} />
+      <Menu active={RoutesPath.USER} navItems={navItems} />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
@@ -32,7 +33,7 @@ const Home = () => {
             <b>Produtos</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-            <ProductList />
+            <UsersList />
           </S.HomeProductList>
         </div>
       </S.HomeContent>
@@ -43,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Users;
