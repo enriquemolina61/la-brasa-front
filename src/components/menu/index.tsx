@@ -58,7 +58,12 @@ const Menu = ({}: MenuProps) => {
           </S.MenuItemButton>
         </S.MenuItem>
       </nav>
-      <S.MenuItemLogout>
+      <S.MenuItemLogout
+        onClick={() => {
+          localStorage.removeItem("token");
+          navigate("/login");
+        }}
+      >
         <img src={Logout} alt="Logout Component" />
       </S.MenuItemLogout>
     </S.Menu>

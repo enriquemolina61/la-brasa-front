@@ -19,8 +19,6 @@ axios.interceptors.response.use(
   },
   (error) => {
     if (error.response.status === 401) {
-      console.log("Alouuuu");
-
       localStorage.removeItem("accessToken");
       window.location.href = "/login";
     }
@@ -45,7 +43,6 @@ export const login = async ({
     }
     return false;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };
@@ -55,7 +52,6 @@ export const getProducts = async () => {
     const response = await axios.get("/product");
     return response.data;
   } catch (error) {
-    console.log(error);
     return [];
   }
 };
@@ -65,7 +61,6 @@ export const getProductById = async (id: string) => {
     const response = await axios.get(`/product/${id}`);
     return response.data;
   } catch (error) {
-    console.log(error);
     return [];
   }
 };
@@ -73,17 +68,13 @@ export const getProductById = async (id: string) => {
 export const updateProduct = async (id: string, product: Product) => {
   try {
     const response = await axios.patch(`/product/${id}`, product);
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export const deleteProduct = async (id: string) => {
   try {
     const response = await axios.delete(`/product/${id}`);
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export const createProduct = async (product: Product) => {
@@ -94,7 +85,6 @@ export const createProduct = async (product: Product) => {
     }
     return false;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };
@@ -104,7 +94,6 @@ export const getUsers = async () => {
     const response = await axios.get("/user");
     return response.data;
   } catch (error) {
-    console.log(error);
     return [];
   }
 };
