@@ -11,5 +11,8 @@ export type Users = {
   name: string;
   email: string;
   password: string;
+  confirmPassword: string;
+  cpf: number;
   image: string;
+  isAdmin: boolean;
 };

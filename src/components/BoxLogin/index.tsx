@@ -17,6 +17,8 @@ const BoxLogin = () => {
 
     if (response) {
       navigate("/");
+    } else {
+      alert("Usuário ou senha inválidos");
     }
   };
 
@@ -30,6 +32,7 @@ const BoxLogin = () => {
         <input type="password" placeholder="Senha" name="password" />
         <ButtonLarge value="Entrar" type="submit" />
       </S.BoxLoginForm>
+      <a onClick={() => navigate("/register")}>Cadastre-se</a>
     </S.BoxLogin>
   );
 };

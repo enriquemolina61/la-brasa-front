@@ -97,3 +97,41 @@ export const getUsers = async () => {
     return [];
   }
 };
+
+export const createUser = async ({
+  email,
+  password,
+  confirmPassword,
+  cpf,
+  image,
+  name,
+  isAdmin,
+}: {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  cpf: number;
+  isAdmin: boolean;
+  image: string;
+}) => {
+  try {
+    const response = await axios.post("/user", {
+      name,
+      email,
+      cpf,
+      password,
+      confirmPassword,
+      image,
+      isAdmin,
+    });
+    if (response.status === 201) {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.log(error);
+
+    return false;
+  }
+};

@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const BoxLogin = styled.section`
+export const BoxRegister = styled.section`
   ${({ theme }) => css`
     background: ${theme.colors.baseBg2};
     width: 330px;
-    height: 414px;
+    height: 550px;
     padding: 20px 20px 35px 20px;
     margin: 20px;
     border-radius: 8px;
@@ -25,7 +25,7 @@ export const BoxLogin = styled.section`
   `}
 `;
 
-export const BoxLoginLogo = styled.div`
+export const BoxRegisterLogo = styled.div`
   ${() => css`
     display: flex;
     justify-content: space-around;
@@ -33,13 +33,14 @@ export const BoxLoginLogo = styled.div`
   `}
 `;
 
-export const BoxLoginLogoImage = styled.img`
+export const BoxRegisterLogoImage = styled.img`
   ${() => css`
     width: 45%;
+    cursor: pointer;
   `}
 `;
 
-export const BoxLoginForm = styled.form`
+export const BoxRegisterForm = styled.form`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -51,7 +52,7 @@ export const BoxLoginForm = styled.form`
   `}
 `;
 
-export const BoxLoginError = styled.span`
+export const BoxRegisterError = styled.span`
   ${({ theme }) => css`
     color: ${theme.colors.secondaryColor};
     text-align: center;
