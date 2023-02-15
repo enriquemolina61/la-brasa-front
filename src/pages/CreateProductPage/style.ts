@@ -90,13 +90,18 @@ export const HomeProductList = styled.div`
   `}
   form {
     display: flex;
+
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
     input {
-      width: 100%;
+      width: 70%;
+      height: 30px;
+      border-top: none;
+      background-color: #1f1d2b;
     }
     button {
-      width: 100%;
+      width: 70%;
       color: #252836;
       background-color: #fec101;
     }
