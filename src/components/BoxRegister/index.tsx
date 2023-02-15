@@ -3,7 +3,7 @@ import logo from "../../assets/imgs/logo.png";
 import ButtonLarge from "../ButtonLarge";
 import { createUser } from "../../utils/api/api";
 import { useNavigate } from "react-router-dom";
-import { Users } from "src/types/product";
+import { Users } from "../../types/product";
 
 const BoxRegister = () => {
   const navigate = useNavigate();
