@@ -43,6 +43,7 @@ const ProductPage = () => {
     }
 
     await updateProduct(params.id as string, data);
+    navigate("/");
   };
   const handleDelete = async () => {
     await deleteProduct(params.id as string);
