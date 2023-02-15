@@ -54,7 +54,7 @@ const CreateProductPage = () => {
         </header>
         <div>
           <S.HomeProductTitle>
-            <b>Hamburguers</b>
+            <b>Crie o seu produto</b>
           </S.HomeProductTitle>
 
           <S.HomeProductList>

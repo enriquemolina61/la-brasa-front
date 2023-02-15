@@ -19,12 +19,12 @@ const BoxRegister = () => {
       image: formData.get("image") as string,
       isAdmin: false,
     };
-    console.log(data);
     if (
       data.name === "" ||
       data.image === "" ||
       data.password === "" ||
-      data.email === ""
+      data.email === "" ||
+      data.confirmPassword === ""
     ) {
       alert("Preencha todos os campos!");
       return;

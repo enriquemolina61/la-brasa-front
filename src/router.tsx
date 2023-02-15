@@ -6,6 +6,7 @@ import ProductPage from "./pages/ProductPage";
 import CreateProductPage from "./pages/CreateProductPage";
 import UserPage from "./pages/UserPage";
 import RegisterPage from "./pages/RegisterPage";
+import UserUpdate from "./pages/UserUpdate";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
       <Route path={RoutesPath.CREATEPRODUCT} element={<CreateProductPage />} />
       <Route path={RoutesPath.USER} element={<UserPage />} />
       <Route path={RoutesPath.REGISTER} element={<RegisterPage />} />
+      <Route path={RoutesPath.UPDATEUSER} element={<UserUpdate />} />
     </Routes>
   );
 };

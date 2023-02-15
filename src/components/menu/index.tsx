@@ -60,7 +60,7 @@ const Menu = ({}: MenuProps) => {
       </nav>
       <S.MenuItemLogout
         onClick={() => {
-          localStorage.removeItem("token");
+          localStorage.removeItem("accessToken");
           navigate("/login");
         }}
       >

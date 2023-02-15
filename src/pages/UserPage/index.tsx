@@ -30,7 +30,7 @@ const Users = () => {
         </header>
         <div>
           <S.HomeProductTitle>
-            <b>Produtos</b>
+            <b>Usuários</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
             <UsersList />

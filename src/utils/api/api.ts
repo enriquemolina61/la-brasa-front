@@ -135,3 +135,58 @@ export const createUser = async ({
     return false;
   }
 };
+
+export const updateUser = async ({
+  id,
+  email,
+  password,
+  confirmPassword,
+  cpf,
+  image,
+  name,
+  isAdmin,
+}: {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  cpf: number;
+  isAdmin: boolean;
+  image: string;
+}) => {
+  try {
+    const response = await axios.patch(`/user/${id}`, {
+      name,
+      email,
+      cpf,
+      password,
+      confirmPassword,
+      image,
+      isAdmin,
+    });
+    if (response.status === 200) {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.log(error);
+
+    return false;
+  }
+};
+
+export const deleteUser = async (id: string) => {
+  try {
+    const response = await axios.delete(`/user/${id}`);
+  } catch (error) {}
+};
+
+export const getUserById = async (id: string) => {
+  try {
+    const response = await axios.get(`/user/${id}`);
+    return response.data;
+  } catch (error) {
+    return [];
+  }
+};

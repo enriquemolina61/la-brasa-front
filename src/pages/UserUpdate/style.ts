@@ -60,7 +60,7 @@ export const HomeHeaderDetailsSearch = styled.div`
   `}
 `;
 
-export const HomeProductTitle = styled.h2`
+export const HomeUserTitle = styled.h2`
   ${({ theme }) => css`
     margin: 0;
     border-bottom: 1px solid ${theme.colors.baseLine};
@@ -83,27 +83,14 @@ export const HomeProductTitle = styled.h2`
   `}
 `;
 
-export const HomeProductList = styled.div`
+export const HomeUserList = styled.div`
   ${() => css`
     margin-top: 25px;
     padding-bottom: 25px;
   `}
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    input {
-      width: 100%;
-    }
-    button {
-      width: 100%;
-      color: #252836;
-      background-color: #fec101;
-    }
-  }
 `;
 
-export const HomeProductListGap = styled.div`
+export const HomeUserListGap = styled.div`
   ${({ theme }) => css`
     width: 200px;
   `}
