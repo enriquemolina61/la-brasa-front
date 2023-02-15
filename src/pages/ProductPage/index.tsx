@@ -83,7 +83,7 @@ const ProductPage = () => {
         </header>
         <div>
           <S.HomeProductTitle>
-            <b>Hamburguers</b>
+            <b>Editando Produto</b>
           </S.HomeProductTitle>
 
           {isLoaded && (
@@ -116,7 +116,7 @@ const ProductPage = () => {
                   defaultValue={product.image}
                 />
                 <button type="submit">Salvar</button>
-                <button type="button" onClick={handleDelete}>
+                <button className="delete" type="button" onClick={handleDelete}>
                   Deletar Produto
                 </button>
               </form>

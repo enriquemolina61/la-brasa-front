@@ -104,6 +104,7 @@ export const HomeProductList = styled.div`
       width: 70%;
       color: #252836;
       background-color: #fec101;
+      cursor: pointer;
     }
   }
 `;

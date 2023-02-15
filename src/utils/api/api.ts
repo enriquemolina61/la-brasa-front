@@ -130,6 +130,9 @@ export const createUser = async ({
     }
     return false;
   } catch (error) {
+    alert(
+      "Erro de cadastro, tente novamente. Ou seu cpf já existe. Colocar link de imagem válida. Senha deve ter no mínimo 6 caracteres, uma letra maiúscula , um número e um caractere especial."
+    );
     console.log(error);
 
     return false;

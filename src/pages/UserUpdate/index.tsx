@@ -89,7 +89,7 @@ const UpdateUser = () => {
         </header>
         <div>
           <S.HomeUserTitle>
-            <b>Hamburguers</b>
+            <b>Editar Usuário</b>
           </S.HomeUserTitle>
 
           {isLoaded && (
@@ -107,12 +107,6 @@ const UpdateUser = () => {
                   name="email"
                   defaultValue={user.email}
                 />
-                <input
-                  type="text"
-                  placeholder="Senha"
-                  name="password"
-                  defaultValue={user.password}
-                />
 
                 <input
                   type="text"
@@ -121,7 +115,7 @@ const UpdateUser = () => {
                   defaultValue={user.image}
                 />
                 <button type="submit">Salvar</button>
-                <button type="button" onClick={handleDelete}>
+                <button className="delete" type="button" onClick={handleDelete}>
                   Deletar Usuário
                 </button>
               </form>

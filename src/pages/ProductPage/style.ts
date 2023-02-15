@@ -88,6 +88,27 @@ export const HomeProductList = styled.div`
     margin-top: 25px;
     padding-bottom: 25px;
   `}
+  form {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    input {
+      width: 70%;
+      height: 30px;
+      border-top: none;
+    }
+    button {
+      width: 70%;
+      color: #252836;
+      background-color: #fec101;
+      cursor: pointer;
+    }
+    button.delete {
+      background-color: #ff0000;
+    }
+  }
 `;
 
 export const HomeProductListGap = styled.div`
