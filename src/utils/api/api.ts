@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Product } from "../../types/product";
+import { Product, UpdateUserType } from "../../types/product";
 
 axios.defaults.baseURL = "https://la-brasa-server-production.up.railway.app/";
 
@@ -139,35 +139,9 @@ export const createUser = async ({
   }
 };
 
-export const updateUser = async ({
-  id,
-  email,
-  password,
-  confirmPassword,
-  cpf,
-  image,
-  name,
-  isAdmin,
-}: {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  cpf: number;
-  isAdmin: boolean;
-  image: string;
-}) => {
+export const updateUser = async (id: string, updatedUser: UpdateUserType) => {
   try {
-    const response = await axios.patch(`/user/${id}`, {
-      name,
-      email,
-      cpf,
-      password,
-      confirmPassword,
-      image,
-      isAdmin,
-    });
+    const response = await axios.patch(`/user/${id}`, updatedUser);
     if (response.status === 200) {
       return true;
     }
