@@ -1,7 +1,6 @@
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Search from "../../assets/icons/search.svg";
 import Menu from "../../components/Menu";
 import { navItems } from "../../data/navigation";
 import { UpdateUserType, Users } from "../../types/product";

@@ -1,8 +1,7 @@
 import { NavItem } from "../components/Menu/types";
 import Home from "../assets/icons/home.svg";
 import Add from "../assets/icons/users.svg";
-
-import { RoutesPath } from "../../src/types/routes";
+import { RoutesPath } from "../types/routes";
 
 export const navItems: NavItem[] = [
   {

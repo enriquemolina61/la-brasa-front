@@ -1,11 +1,10 @@
 import { DateTime } from "luxon";
 import { useNavigate } from "react-router-dom";
-import { createProduct } from "../../utils/api/api";
-import Search from "../../assets/icons/search.svg";
 import Menu from "../../components/Menu";
 import { navItems } from "../../data/navigation";
 import { Product } from "../../types/product";
 import { RoutesPath } from "../../types/routes";
+import { createProduct } from "../../utils/api/api";
 import * as S from "./style";
 
 const CreateProductPage = () => {
