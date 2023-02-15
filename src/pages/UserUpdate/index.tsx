@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Search from "../../assets/icons/search.svg";
 import Menu from "../../components/Menu";
 import { navItems } from "../../data/navigation";
-import { Users } from "../../types/product";
+import { UpdateUserType, Users } from "../../types/product";
 import { RoutesPath } from "../../types/routes";
 import { deleteUser, getUserById, updateUser } from "../../utils/api/api";
 import * as S from "./style";
@@ -30,14 +30,10 @@ const UpdateUser = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget) as any;
-    const data: Users = {
+    const data: UpdateUserType = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
-      password: formData.get("password") as string,
-      cpf: +formData.get("cpf"),
       image: formData.get("image") as string,
-      confirmPassword: formData.get("password") as string,
-      isAdmin: false,
     };
     if (JSON.stringify(data) === JSON.stringify(user)) {
       alert("Nenhum dado foi alterado!");
@@ -45,6 +41,7 @@ const UpdateUser = () => {
     }
 
     await updateUser(params.id as string, data);
+    navigate("/user");
   };
   const handleDelete = async () => {
     await deleteUser(params.id as string);
@@ -64,7 +61,6 @@ const UpdateUser = () => {
         confirmPassword: response.password,
         isAdmin: false,
       });
-      console.log(response);
 
       setIsLoaded(true);
     };
@@ -81,10 +77,6 @@ const UpdateUser = () => {
               <S.HomeHeaderDetailsLogo>La Brasa</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>{date}</S.HomeHeaderDetailsDate>
             </div>
-            <S.HomeHeaderDetailsSearch>
-              <img src={Search} alt="Search Component" />
-              <input type="text" placeholder="Procure pelo sabor" />
-            </S.HomeHeaderDetailsSearch>
           </S.HomeHeaderDetails>
         </header>
         <div>

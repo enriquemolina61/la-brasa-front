@@ -16,3 +16,10 @@ export type Users = {
   image: string;
   isAdmin: boolean;
 };
+
+export type UpdateUserType = {
+  id?: string;
+  name: string;
+  email: string;
+  image: string;
+};
